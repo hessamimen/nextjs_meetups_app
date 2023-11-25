@@ -1,7 +1,11 @@
 // our-domain.com/new-meetup
+import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 
-function index() {
-  return <div>new-meetup index</div>;
+function NewMeetupPage() {
+  function addMeetupHandler(enteredMeetupData) {
+    console.log(enteredMeetupData);
+  }
+  return <NewMeetupForm onAddMeetup={addMeetupHandler} />;
 }
 
-export default index;
+export default NewMeetupPage;
