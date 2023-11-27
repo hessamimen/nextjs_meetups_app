@@ -28,13 +28,17 @@ const DUMY_MEETUPS = [
   },
 ];
 
-function HomePage() {
-  const [loadedMeetups, setLoadedMeetups] = useState([]);
-  useEffect(() => {
-    //send HTTP request
-    setLoadedMeetups(DUMY_MEETUPS);
-  }, []);
-  return <MeetupList meetups={loadedMeetups} />;
+function HomePage(props) {
+  return <MeetupList meetups={props.meetups} />;
+}
+
+export async function getStaticProps() {
+  //fetch data from API
+  return {
+    props: {
+      meetups: DUMY_MEETUPS,
+    },
+  };
 }
 
 export default HomePage;
