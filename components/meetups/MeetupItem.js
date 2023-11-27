@@ -6,7 +6,6 @@ function MeetupItem(props) {
   const router = useRouter();
   function showDetailsHandler() {
     router.push(`/${props.id}`);
-    console.log("props.id", props.id);
   }
   return (
     <li className={classes.item}>
